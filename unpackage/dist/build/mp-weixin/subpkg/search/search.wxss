@@ -1,0 +1,1 @@
+.searchHistory{position:relative;z-index:3;padding:0 20rpx}.searchHistory .title > text{font-weight:700}.searchHistory .content > text{display:inline-block;margin:12rpx;padding:8rpx 16rpx;border-radius:20rpx;background-color:#fff}

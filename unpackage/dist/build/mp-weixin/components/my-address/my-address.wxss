@@ -1,0 +1,1 @@
+.root{padding:20rpx}.root .row{display:flex;justify-content:space-between;margin:20rpx 0}.root .bottom-line{height:20rpx;background:repeating-linear-gradient(-45deg,red,red 45rpx,#fff 0,#fff 50rpx,#00f 0,#00f 95rpx,#fff 0,#fff 100rpx)}

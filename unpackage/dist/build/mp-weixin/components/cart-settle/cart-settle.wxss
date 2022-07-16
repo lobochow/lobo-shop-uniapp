@@ -1,0 +1,1 @@
+.root{display:flex;align-items:center;justify-content:space-between;border:2rpx solid #ddd}.root > label{padding-left:20rpx}.root .settleButton{padding:24rpx 30rpx;color:#fff;background-color:#e1251b;transition:.1s ease}.root .settleButton:active{background-color:#a91b13}

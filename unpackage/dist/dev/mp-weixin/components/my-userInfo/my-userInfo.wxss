@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+  background-color: #E1251B;
+}
+.userInfo > text {
+  margin-top: 20rpx;
+  color: white;
+}
+.favPanel {
+  display: flex;
+  justify-content: space-around;
+  width: 700rpx;
+  margin: 0 auto;
+  margin-top: -30rpx;
+  padding: 20rpx 0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+.favPanel .favItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+}
+.billPanel {
+  width: 700rpx;
+  margin: 20rpx auto;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+.billPanel .title {
+  padding: 20rpx;
+}
+.billPanel .billIconsContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx 0;
+}
+.billPanel .billIconsContainer .billPanelItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.billPanel .billIconsContainer .billPanelItem .iconfont {
+  font-size: 60rpx;
+  color: #E1251B;
+}
+.billPanel .billIconsContainer .billPanelItem > text {
+  margin-top: 6rpx;
+  font-size: 24rpx;
+}
+uni-list > view {
+  width: 700rpx;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+uni-list > view > view {
+  display: none;
+}
+uni-list uni-list-item > view {
+  background-color: transparent;
+}
+

@@ -1,0 +1,39 @@
+/* 轮播图区域 */
+.swiperArea {
+  text-align: center;
+}
+.swiperArea image {
+  height: 100%;
+}
+/* 销售属性选择区域 */
+.saleAttrArea .saleAttrItem {
+  padding: 0 20rpx;
+  margin-bottom: 30rpx;
+}
+.saleAttrArea .saleAttrItem .saleAttrName {
+  padding: 10rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.saleAttrArea .saleAttrItem .saleAttrValueItem {
+  padding: 10rpx 20rpx;
+  margin: 0 20rpx;
+  border: 2rpx solid transparent;
+  border-radius: 30rpx;
+  background-color: #eee;
+}
+.saleAttrArea .saleAttrItem .saleAttrValueItem.selectedAttr {
+  color: #E1251B;
+  border: #E1251B 2rpx solid;
+  background-color: rgba(225, 37, 27, 0.1);
+}
+.saleAttrArea .saleAttrItem .saleAttrValueItem.disableSelect {
+  color: #ccc;
+  text-decoration: line-through;
+}
+.uni-goods-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+

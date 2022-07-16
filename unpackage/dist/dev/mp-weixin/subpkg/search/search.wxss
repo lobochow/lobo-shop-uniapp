@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+/* 搜索历史区域 */
+.searchHistory {
+  position: relative;
+  z-index: 3;
+  padding: 0 20rpx;
+}
+.searchHistory .title > text {
+  font-weight: bold;
+}
+.searchHistory .content > text {
+  display: inline-block;
+  margin: 12rpx;
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+  background-color: white;
+}
+

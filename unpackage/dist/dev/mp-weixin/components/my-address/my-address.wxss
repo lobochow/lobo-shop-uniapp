@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.root {
+  padding: 20rpx;
+}
+.root .row {
+  display: flex;
+  justify-content: space-between;
+  margin: 20rpx 0;
+}
+.root .bottom-line {
+  height: 20rpx;
+  background: repeating-linear-gradient(-45deg, red 0, red 45rpx, white 45rpx, white 50rpx, blue 50rpx, blue 95rpx, white 95rpx, white 100rpx);
+}
+

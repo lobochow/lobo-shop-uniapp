@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.drawerWrap {
+  position: absolute;
+  overflow: hidden;
+  padding-bottom: 0;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  transition: 1s ease;
+}
+.drawerWrap .drawer {
+  position: relative;
+  z-index: 1;
+  transition: 0.3s ease;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+.drawerWrap .drawer.show {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.drawerWrap.show {
+  padding-bottom: 20rpx;
+  transition: 0s ease;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+

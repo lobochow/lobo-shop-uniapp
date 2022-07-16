@@ -1,0 +1,1 @@
+.root{background-color:#fff}.root cart-settle{position:fixed;bottom:0;width:750rpx}.emptyPage{height:100vh;display:flex;align-items:center;justify-content:center}

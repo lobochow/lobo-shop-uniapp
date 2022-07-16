@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "购物车",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "my-address": "/components/my-address/my-address",
+    "cart-goods": "/components/cart-goods/cart-goods",
+    "cart-settle": "/components/cart-settle/cart-settle",
+    "u-empty": "/uni_modules/uview-ui/components/u-empty/u-empty"
+  }
+}

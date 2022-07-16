@@ -1,0 +1,1 @@
+<view class="{{['drawerWrap',(show)?'show':'']}}"><view class="{{['drawer',(show)?'show':'']}}"><slot></slot></view></view>

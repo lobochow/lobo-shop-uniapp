@@ -1,0 +1,1 @@
+<view class="root"><label><radio checked="{{checked}}" color="#E1251B" data-event-opts="{{[['tap',[['radioChange',['$event']]]]]}}" bindtap="__e"></radio><text>全选</text></label><view class="account">合计：¥9299</view><view class="settleButton">结算(1)</view></view>

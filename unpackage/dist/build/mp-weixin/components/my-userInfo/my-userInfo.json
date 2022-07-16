@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-avatar": "/uni_modules/uview-ui/components/u-avatar/u-avatar",
+    "u-line": "/uni_modules/uview-ui/components/u-line/u-line",
+    "uni-list": "/uni_modules/uni-list/components/uni-list/uni-list",
+    "uni-list-item": "/uni_modules/uni-list/components/uni-list-item/uni-list-item"
+  }
+}

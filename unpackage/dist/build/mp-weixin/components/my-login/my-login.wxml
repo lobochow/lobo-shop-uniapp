@@ -1,0 +1,1 @@
+<view class="container"><u-avatar class="avatar" vue-id="2db90e82-1" src="{{none}}" size="100" bind:__l="__l"></u-avatar><button class="loginButton" type="primary" data-event-opts="{{[['tap',[['login',['$event']]]]]}}" bindtap="__e">一键登录</button><text class="tipText">登陆后尽享更多权益</text></view>

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2rpx solid #ddd;
+}
+.root > label {
+  padding-left: 20rpx;
+}
+.root .settleButton {
+  padding: 24rpx 30rpx;
+  color: white;
+  background-color: #E1251B;
+  transition: 0.1s ease;
+}
+.root .settleButton:active {
+  background-color: #a91b13;
+}
+
