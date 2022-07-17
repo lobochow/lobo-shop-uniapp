@@ -23,8 +23,8 @@
                 },
                 {
                     "name": "商品详情页",
-                    "pathName": "pages/spuDetail/spuDetail",
-                    "query": "_id=62be6112a35da64efde23c5f&sku_id=62aca06a8ea613e94ee1acc2",
+                    "pathName": "subpkg/spuDetail/spuDetail",
+                    "query": "",
                     "launchMode": "default",
                     "scene": null
                 },
@@ -48,8 +48,16 @@
                     "query": "keyword=手机",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "订单管理",
+                    "pathName": "subpkg/bill/bill",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }
-    }
+    },
+    "libVersion": "2.25.0"
 }

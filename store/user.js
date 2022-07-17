@@ -10,8 +10,8 @@ const actions = {
 			url: '/v1/userInfo'
 		});
 
-		if (result.statusCode === 200 && result.data.code === 200) {
-			context.commit('muGetUserInfo', result.data.data.userInfo)
+		if (result.code === 200) {
+			context.commit('muGetUserInfo', result.data.userInfo)
 		}
 
 	},

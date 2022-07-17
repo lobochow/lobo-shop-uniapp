@@ -63,6 +63,10 @@
 		align-items: center;
 
 		padding: 20rpx;
+		box-shadow: 0 0 10rpx rgba(0,0,0,0.3);
+		
+		background-color: white;
+		
 
 		checkbox {
 			border-radius: 50%;

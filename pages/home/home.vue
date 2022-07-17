@@ -62,7 +62,7 @@
 					url: '/v1/homeSwiper',
 					method: 'GET'
 				});
-				if (result.statusCode === 200) {
+				if (result.code === 200) {
 					this.homeSwipers = result.data;
 				} else {
 					console.log('获取首页轮播图失败');
@@ -74,7 +74,7 @@
 					url: '/v1/categorys',
 					method: 'GET'
 				});
-				if (result.statusCode === 200) {
+				if (result.code === 200) {
 					//数据处理
 					result.data.categorys.forEach(item => {
 						item.names = item.c1names.join('/');
@@ -105,10 +105,15 @@
 					url: '/subpkg/searchResult/searchResult?keyword=' + c3name
 				})
 			},
+			async homeInit(){
+				uni.showLoading();
+				await this.getHomeSwipers();
+				await this.getCategorys();
+				uni.hideLoading();
+			}
 		},
 		onLoad(options) {
-			this.getHomeSwipers();
-			this.getCategorys();
+			this.homeInit();
 		},
 
 	}

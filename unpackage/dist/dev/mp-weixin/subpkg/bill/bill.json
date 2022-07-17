@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "my-bill-record": "/components/my-billRecord/my-billRecord"
+  }
+}

@@ -1,10 +1,10 @@
 @charset "UTF-8";
 /* 水平间距 */
 /* 水平间距 */
-.root {
-  background-color: white;
+.root .hasCartInfo .goodsListArea {
+  padding-bottom: 100rpx;
 }
-.root cart-settle {
+.root .cart-settle > cover-view {
   position: fixed;
   bottom: 0;
   width: 750rpx;

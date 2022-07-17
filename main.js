@@ -1,33 +1,29 @@
 //云托管初始化
 wx.cloud.init();
 
-
-
 //封装请求函数
 uni.lobo = {};
-uni.lobo.request = async function({
-	url,
-	method,
-	data,
-	query,
-	header
-}) {
-	uni.showLoading({
-		title: '请求数据中'
-	})
-	
+
+//配置全局url
+uni.lobo.env = 'pro';
+if (uni.lobo.env === 'dev') {
+	uni.lobo.baseURL = 'http://127.0.0.1:8088'
+} else {
+	uni.lobo.baseURL = ''
+}
+
+uni.lobo.request = async function({ url, method, data, query, header }) {
 	let result = {};
 	//获取token
 	let token = uni.getStorageSync('token');
 
 	//判断是不是本地开发测试
-	if (url.indexOf('127.0.0.1') !== -1) {
+	if (uni.lobo.env === 'dev') {
 		//请求拦截
-		console.log('本地请求');
 
 		result = await new Promise((resolve, reject) => {
 			uni.request({
-				url,
+				url: uni.lobo.baseURL + url + (query ? ('?' + uni.lobo.urlEndcode(query)) : ''),
 				method,
 				data,
 				header: { token },
@@ -42,14 +38,9 @@ uni.lobo.request = async function({
 					} else {
 						resolve(res.data);
 					}
-					console.log('本地请求成功')
-				},
-				fail: err => console.log('本地请求失败:', url, err),
-				complete: () => console.log('本地请求结束了')
+				}
 			})
 		})
-		
-		console.log('返回响应');
 	} else {
 		//请求拦截
 
@@ -69,14 +60,15 @@ uni.lobo.request = async function({
 
 		//响应拦截
 		//登陆超时
-		if (result.data.code === 201) {
+		result = result.data;
+		if (result.code === 201) {
 			store.commit('userStore/muSetToken', '')
 			uni.showToast({
 				title: '请先登陆',
-				icon: 'none',
-				duration:1500
+				icon: 'error',
+				duration: 1500
 			})
-			setTimeout( () => {
+			setTimeout(() => {
 				uni.switchTab({
 					url: '/pages/user/user'
 				})
@@ -84,9 +76,7 @@ uni.lobo.request = async function({
 		}
 
 	}
-	
-	uni.hideLoading();
-	
+
 	return result;
 }
 
@@ -126,6 +116,7 @@ import {
 	createSSRApp
 } from 'vue'
 import App from './App.vue'
+import res from 'express/lib/response';
 export function createApp() {
 	const app = createSSRApp(App)
 	return {

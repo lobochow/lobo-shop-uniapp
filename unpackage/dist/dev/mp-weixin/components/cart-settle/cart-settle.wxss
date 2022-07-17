@@ -10,6 +10,27 @@
 .root > label {
   padding-left: 20rpx;
 }
+.root .selectAll {
+  padding-left: 20rpx;
+}
+.root .selectAll.selected {
+  color: #E1251B;
+}
+.root .selectAll uni-icons {
+  margin-right: 5px;
+}
+.root .selectAll uni-icons > text {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border: 1px solid #CCC;
+  border-radius: 50%;
+  color: white !important;
+}
+.root .selectAll uni-icons.selected > text {
+  background-color: #E1251B;
+}
 .root .settleButton {
   padding: 24rpx 30rpx;
   color: white;

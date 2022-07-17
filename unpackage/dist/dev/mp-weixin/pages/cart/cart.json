@@ -3,6 +3,8 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "my-address": "/components/my-address/my-address",
+    "uni-swipe-action": "/uni_modules/uni-swipe-action/components/uni-swipe-action/uni-swipe-action",
+    "uni-swipe-action-item": "/uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item",
     "cart-goods": "/components/cart-goods/cart-goods",
     "cart-settle": "/components/cart-settle/cart-settle",
     "u-empty": "/uni_modules/uview-ui/components/u-empty/u-empty"

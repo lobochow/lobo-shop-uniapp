@@ -33,8 +33,8 @@
 </template>
 
 <script>
-	import {mapState} from 'vuex'
-	
+	import { mapState } from 'vuex'
+
 	export default {
 		data() {
 			return {
@@ -100,15 +100,25 @@
 			},
 			spu_id() {
 				this.spuInfo = this.skuInfo.spuList.find(item => item._id === this.spu_id);
+			},
+			goodsList:{
+				handler(){
+					this.goods_nav_options.find(item => item.text === '购物车').info = this.goodsList.length + ''
+				},
+				immediate: true
 			}
 		},
 		methods: {
 			async init(spu_id) {
+				uni.showLoading();
+
 				let result = await uni.lobo.request({
 					url: '/v1/sku?sku_id=' + this.sku_id
 				});
 
-				this.skuInfo = result.data.data[0];
+				uni.hideLoading();
+
+				this.skuInfo = result.data[0];
 				this.spu_id = spu_id;
 			},
 
@@ -210,6 +220,17 @@
 			},
 			async buyNavButtonClick({ index, content }) {
 				if (content.text === '加入购物车') {
+					let attrLeft = this.attrs.filter(item => this.selectedAttr.every(attr => attr.attrName !== item
+						.attrName)).map(item => item.attrName);
+					if (attrLeft.length !== 0) {
+						uni.showToast({
+							title: '选择' + attrLeft[0],
+							icon: 'error',
+							duration: 1500
+						})
+						return;
+					}
+
 					let goodsList = this.goodsList.map(item => {
 						return {
 							count: item.count,
@@ -219,36 +240,39 @@
 					let index = goodsList.findIndex(item => {
 						return item.spu_id === this.spu_id
 					});
-					if(index === -1){
+					if (index === -1) {
 						goodsList.push({
 							count: 1,
 							spu_id: this.spu_id
 						})
-					}else{
+					} else {
 						goodsList[index].count++
 					}
-					
-					let result = await this.$store.dispatch('cartStore/acUpdateCart', {goodsList});
-					if(result === 200){
+
+					let result = await this.$store.dispatch('cartStore/acUpdateCart', { goodsList });
+					if (result === 200) {
 						uni.showToast({
-							title:'添加成功!',
-							duration:1500
+							title: '添加成功!',
+							duration: 1500
 						})
-					}else if(result === 201){
+						//获取最新购物车信息
+						this.$store.dispatch('cartStore/acGetCartInfo');
+					} else if (result === 201) {
 						uni.showToast({
 							title: '请先登陆',
-							duration:1500
+							duration: 1500
 						})
-					}else{
+					} else {
 						uni.showToast({
 							title: '添加失败',
-							duration:1500
+							duration: 1500
 						})
 					}
 				}
 			}
 		},
 		onLoad(options) {
+			this.sku_id = options.sku_id;
 			this.init(options._id);
 		},
 	}

@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  margin: 20rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.3);
+}
+.container .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .title .bill-status {
+  font-size: 24rpx;
+  color: #ccc;
+}
+.container .bill-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+.container .bill-content .good-info {
+  display: flex;
+  margin-right: 40rpx;
+}
+.container .bill-content .good-info .img-wrap {
+  width: 250rpx;
+  height: 200rpx;
+}
+.container .bill-content .good-info .img-wrap > image {
+  max-height: 100%;
+  max-width: 100%;
+}
+.container .bill-content .good-info .description {
+  font-size: 28rpx;
+}
+.container .bill-content .pay-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-self: center;
+}
+.container .bill-content .pay-info .buy-num {
+  font-size: 24rpx;
+}
+

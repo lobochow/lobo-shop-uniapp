@@ -50,7 +50,7 @@
 			</view>
 		</view>
 
-		<view class="emptyResult">
+		<view class="emptyResult" v-if="spuList.length === 0">
 			<u-empty mode="search"
 					 icon="http://cdn.uviewui.com/uview/empty/search.png">
 			</u-empty>
@@ -192,15 +192,24 @@
 				selectedAttrList.forEach(item => {
 					query[item.attrName] = item.attrValue
 				})
+				
+				console.log(query);
 
 				this.updateSpuInfo(query)
 			},
 
 			async initSpuInfo(query) {
+				uni.showLoading({
+					title:'搜索中'
+				});
+				
 				//请求spu列表数据
 				let data = await this.reqSpuList(query);
+				
+				uni.hideLoading();
 
 				this.keyWordSpuList = this.spuList = data;
+				
 			},
 
 			async updateSpuInfo(query) {
@@ -211,11 +220,11 @@
 				})
 
 				//数据处理
-				result.data.data.forEach(item => {
+				result.data.forEach(item => {
 					item.attrValueString = item.attrList.reduce((pre, cur) => pre + cur.attrValue + ' ', '')
 				})
 
-				this.spuList = result.data.data
+				this.spuList = result.data
 			},
 
 			//请求spu列表数据
@@ -226,7 +235,7 @@
 					query: queryObj
 				})
 
-				return result.data.data;
+				return result.data;
 			},
 
 			isSelectedAttrValue(attrName, attrVaule) {
@@ -235,7 +244,6 @@
 
 		},
 		onLoad(options) {
-			console.log(options)
 			this.keyword = options.keyword
 			this.initSpuInfo({ keyword: this.keyword })
 		},

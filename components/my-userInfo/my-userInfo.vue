@@ -30,19 +30,19 @@
 			<view class="title">我的订单</view>
 			<u-line></u-line>
 			<view class="billIconsContainer">
-				<view class="billPanelItem">
+				<view class="billPanelItem" @tap="goBillPage">
 					<i class="iconfont icon-daifukuan"></i>
 					<text>待付款</text>
 				</view>
-				<view class="billPanelItem">
+				<view class="billPanelItem" @tap="goBillPage">
 					<i class="iconfont icon-huoche"></i>
 					<text>待收货</text>
 				</view>
-				<view class="billPanelItem">
+				<view class="billPanelItem" @tap="goBillPage">
 					<i class="iconfont icon-tuikuan"></i>
 					<text>退款/退货</text>
 				</view>
-				<view class="billPanelItem">
+				<view class="billPanelItem" @tap="goBillPage">
 					<i class="iconfont icon-dingdan"></i>
 					<text>全部订单</text>
 				</view>
@@ -79,6 +79,11 @@
 		methods: {
 			logout(){
 				this.$store.dispatch('userStore/acLogout');
+			},
+			goBillPage(){
+				uni.navigateTo({
+					url:"/subpkg/bill/bill"
+				})
 			}
 		}
 	}

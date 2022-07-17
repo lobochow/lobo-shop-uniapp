@@ -1,0 +1,1 @@
+<view><block wx:for="{{showBillList}}" wx:for-item="billItem" wx:for-index="index" wx:key="index"><my-bill-record vue-id="{{'422be728-1-'+index}}" billInfo="{{billItem}}" bind:__l="__l"></my-bill-record></block></view>

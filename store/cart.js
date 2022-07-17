@@ -9,24 +9,35 @@ const actions = {
 			method: 'GET'
 		})
 
-		if (result.data.code === 200) {
-			context.commit('muGetCartInfo', result.data.data);
+		if (result.code === 200) {
+			context.commit('muGetCartInfo', result.data);
 		}
 
 	},
 
 	async acUpdateCart(context, data) {
+		/* data数据结构
+		{
+		    user_id: mongoose.Types.ObjectId,
+		    goodsList: {
+		        type: [{
+		            count: Number,
+		            spu_id: mongoose.Types.ObjectId
+		        }]
+		    }
+		}
+		 */
 		let result = await uni.lobo.request({
 			url: '/v1/cart',
 			method: 'POST',
 			data
 		})
-		
-		if(result.statusCode === 200 && result.data.code === 200){
+
+		if (result.code === 200) {
 			context.dispatch('acGetCartInfo');
 		}
-		
-		return result?.data?.code;
+
+		return result?.code;
 	}
 }
 

@@ -196,7 +196,7 @@ var _default =
                     url: '/v1/homeSwiper',
                     method: 'GET' }));case 2:result = _context.sent;
 
-                if (result.statusCode === 200) {
+                if (result.code === 200) {
                   _this.homeSwipers = result.data;
                 } else {
                   console.log('获取首页轮播图失败');
@@ -208,7 +208,7 @@ var _default =
                     url: '/v1/categorys',
                     method: 'GET' }));case 2:result = _context2.sent;
 
-                if (result.statusCode === 200) {
+                if (result.code === 200) {
                   //数据处理
                   result.data.categorys.forEach(function (item) {
                     item.names = item.c1names.join('/');
@@ -238,11 +238,16 @@ var _default =
       uni.navigateTo({
         url: '/subpkg/searchResult/searchResult?keyword=' + c3name });
 
+    },
+    homeInit: function homeInit() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+                uni.showLoading();_context3.next = 3;return (
+                  _this3.getHomeSwipers());case 3:_context3.next = 5;return (
+                  _this3.getCategorys());case 5:
+                uni.hideLoading();case 6:case "end":return _context3.stop();}}}, _callee3);}))();
     } },
 
   onLoad: function onLoad(options) {
-    this.getHomeSwipers();
-    this.getCategorys();
+    this.homeInit();
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

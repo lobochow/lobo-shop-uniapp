@@ -10,7 +10,8 @@
       "pages": [
         "search/search",
         "searchResult/searchResult",
-        "spuDetail/spuDetail"
+        "spuDetail/spuDetail",
+        "bill/bill"
       ]
     }
   ],
